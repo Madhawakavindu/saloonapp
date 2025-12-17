@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saloon/services/widget_support.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -22,7 +23,7 @@ class _OnboardingState extends State<Onboarding> {
                 decoration: BoxDecoration(color: Color(0xff2c3925)),
                 child: Column(
                   children: [
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 50.0),
                     Text(
                       "  A professional beauty salon offering hair, nail, and skin services in a clean, relaxing environment, focused on expert care, quality products, and customer satisfaction.",
                       textAlign: TextAlign.center,
@@ -32,16 +33,23 @@ class _OnboardingState extends State<Onboarding> {
                         fontSize: 16.0,
                       ),
                     ),
-                    SizedBox(height: 30.0),
-                    Container(
-                      padding: EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(color: Color(0xfffdece7)),
-                      child: Text(
-                        "BOOK NOW",
-                        style: TextStyle(
-                          color: Color(0xff2c3925),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24.0,
+                    SizedBox(height: 90.0),
+                    Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        height: 70.0,
+                        width: 280.0,
+                        padding: EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          color: Color(0xfffdece7),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "BOOK NOW",
+                            style: AppWidget.healineTextStyle(24.0),
+                          ),
                         ),
                       ),
                     ),
