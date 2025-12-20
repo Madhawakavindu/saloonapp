@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saloon/pages/signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -11,12 +12,12 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Color.fromARGB(255, 79, 18, 101),
+      backgroundColor: Color.fromARGB(255, 79, 18, 101),
       body: Container(
         child: Stack(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("assets/images/pixel.jpg"),
+            //Image.asset("assets/images/pixel.jpg"),
             Padding(
               padding: EdgeInsets.only(
                 top: MediaQuery.of(context).size.height / 3.5,
@@ -35,48 +36,59 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 35.0),
 
-                  Container(
-                    height: 55,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff4c5aa5),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: TextField(
-                      keyboardType: TextInputType.emailAddress,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: Container(
+                      height: 55,
+                      decoration: BoxDecoration(
+                        color: const Color(0xff4c5aa5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: TextField(
+                        keyboardType: TextInputType.emailAddress,
 
-                      style: const TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 16,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 16,
+                          ),
+                          prefixIcon: const Icon(
+                            Icons.email,
+                            color: Colors.white,
+                          ),
+                          hintText: "Email",
+                          hintStyle: const TextStyle(color: Colors.white70),
                         ),
-                        prefixIcon: const Icon(
-                          Icons.email,
-                          color: Colors.white,
-                        ),
-                        hintText: "Email",
-                        hintStyle: const TextStyle(color: Colors.white70),
                       ),
                     ),
                   ),
                   SizedBox(height: 25.0),
-                  Container(
-                    height: 55,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff4c5aa5),
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: TextField(
-                      obscureText: true, // shows dots ●●●
-                      style: const TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 16,
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 5, left: 0),
+                      child: Container(
+                        height: 55,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff4c5aa5),
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        prefixIcon: const Icon(Icons.lock, color: Colors.white),
-                        hintText: "Password",
-                        hintStyle: const TextStyle(color: Colors.white70),
+                        child: TextField(
+                          obscureText: true, // shows dots ●●●
+                          style: const TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 16,
+                            ),
+                            prefixIcon: const Icon(
+                              Icons.lock,
+                              color: Colors.white,
+                            ),
+                            hintText: "Password",
+                            hintStyle: const TextStyle(color: Colors.white70),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -84,12 +96,15 @@ class _LoginState extends State<Login> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text(
-                        "Forgot Password?",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                          ),
                         ),
                       ),
                     ],
@@ -128,12 +143,20 @@ class _LoginState extends State<Login> {
                           fontSize: 18.0,
                         ),
                       ),
-                      Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          color: Color(0xfff85f3c),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22.0,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Signup()),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            color: Color(0xfff85f3c),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22.0,
+                          ),
                         ),
                       ),
                     ],
