@@ -1,10 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:saloon/pages/home.dart';
 import 'package:saloon/pages/login.dart';
 import 'package:saloon/pages/onboarding.dart';
 import 'package:saloon/pages/signup.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
